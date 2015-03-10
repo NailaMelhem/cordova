@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="application">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Coucou <(")</title>
+    </head>
+
+    <!-- http://ajax.googleapis.com/ajax/services/search/web -->
+    <body>
+        <div class="app">
+            <header>E.T Maison Téléphone</header>
+
+            <div class="wrapper" ng-view>
+                
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#/home">Maison</a></li>
+                    <li><a href="#/position">E.T</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <script type="text/javascript" src="js/Library/angular.min.js"></script>
+        <script type="text/javascript" src="js/Library/angular-route.min.js"></script>
+        <script type="text/javascript" src="js/Library/angular-touch.min.js"></script>
+
+
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <!-- Controllers -->
+        <script type="text/javascript" src="js/Controllers/HomeController.js"></script>
+        <script type="text/javascript" src="js/Controllers/PositionController.js"></script>
+
+        <!-- Service -->
+        <script type="text/javascript" src="js/Services/SearchService.js"></script>
+        <script type="text/javascript" src="js/Services/GeolocationService.js"></script>
+
+        <!-- Directive -->
+        <script type="text/javascript" src="js/Directives/dirLoader.js"></script>
+
+        
+    </body>
+</html>

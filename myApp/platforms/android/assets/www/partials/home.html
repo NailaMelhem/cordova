@@ -1,0 +1,14 @@
+<h1>Home</h1>
+
+<form  ng-submit="submit(); submitted=true">
+        <input type="search" ng-model="inputSearch" placeholder="Recherche" />
+        <input type="submit" value="ok" />
+</form>
+<div dir-loader="searchs" class="page-content">
+        <div class="listItem" ng-repeat="search in searchs.responseData.results" >
+               <h4>{{search.titleNoFormatting | limitTo: 30}}</h4>
+               <div ng-bind-html="showHtml(search.content)"></div>
+               <hr />
+                
+        </div>
+</div>

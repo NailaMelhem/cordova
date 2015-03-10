@@ -1,0 +1,151 @@
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    /*
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );*/
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 50px;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #222; 
+}
+
+
+/* Début Menu */
+nav{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;  
+}
+
+nav ul li{
+    list-style: none;
+    float: left;
+    width: 50%;
+}
+
+nav li a{
+
+    text-decoration: none;
+    color: #FFF;
+    display: block;
+    line-height: 50px;
+    background-color: #222;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav li:first-child a{
+    border-right: 1px solid #FFF;
+}
+
+/* Fin Menu */
+
+.wrapper{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    padding: 20px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    /*amorti sur iOs*/
+    
+    -webkit-overflow-scrolling: touch;  
+}
+
+.searchForm input[type="submit"]{
+    width: 10px;
+}
+
+.searchForm input[type="search"]{
+    width: 88px;
+}
+
+.searchForm input{
+    margin-bottom: 10px;
+}
+
+.listItem hr{
+    margin: 10px 0;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #000;
+}
+
+.listItem h4{
+    color: #66E;
+}
+
+.loader:before{
+    content : " ";
+    display: block;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 1500;
+    min-height: 125px;
+    max-height: 100%;
+    width: 100%;
+
+    background-image: url('./../img/loader.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #E4E4E4;
+    background-size: 50px;
+}
+
+.page-content{
+    position: relative;
+}
+
+.
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
