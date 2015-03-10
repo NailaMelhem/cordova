@@ -1,10 +1,15 @@
-<h1>Connexion</h1>
+<h1>Home</h1>
 
 <form  ng-submit="submit(); submitted=true">
-        <input type="mail"  value="mail1@hotmail.com" ng-model="inputMail" />
-        <input type="text" value="azerty"  ng-model="inputPassword"/>
+        <input type="text" ng-model="inputMail" value="mail1@hotmail.com" />
+        <input type="text" ng-model="inputPassword" value="azerty" />
         <input type="submit" value="ok" />
 </form>
 <div dir-loader="searchs" class="page-content">
-        <input type="text" ng-model="inputReponse" placeholder="" />
+        <div class="listItem" ng-repeat="search in searchs.responseData.results" >
+               <h4>{{search.titleNoFormatting | limitTo: 30}}</h4>
+               <div ng-bind-html="showHtml(search.content)"></div>
+               <hr />
+                
+        </div>
 </div>

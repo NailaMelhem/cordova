@@ -7,12 +7,10 @@ application.controller('HomeController', function ($scope, $sce, SearchService){
 					$scope.searchs = data;
 					console.log(data);
 				}
-		)
-	
+			)
 	} 
 
 	$scope.showHtml = function(stringHtml){
-		console.log(alert($sce.trustAsHtml(stringHtml) )  );
 		return $sce.trustAsHtml(stringHtml);
 	}
 

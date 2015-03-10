@@ -1,8 +1,4 @@
-
- urlWebService='http://localhost/Webservice/Public/index.php';
-
-
-
+urlWebService="http://localhost/webservice/public/index.php";
 
 var app = {
     // Application Constructor
