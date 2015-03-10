@@ -3,11 +3,11 @@ application.service('UserService', function($http){
 	function authentification(mail, password){
 
 
-		/*jsonData = {
+		jsonData = {
 			'service' 		: 'user',
 			'method'	 	: 'authentification',
-			'mail'	 		: mail,
-			'password'	 	: password
+			'mail'	 		: "samt@gamil.com",//mail+"",
+			'password'	 	: password+""
 		}
 	   	$.ajax({
 	        type: 'POST',
@@ -22,38 +22,44 @@ application.service('UserService', function($http){
 	    });
 	    return alors;
 
+/*
 		var data = {
-			'service' 		: 'user',
-			'method'	 	: 'authentification',
-			'mail'	 		: mail,
-			'password'	 	: password
+			service 		: "user",
+			method	 	: "authentification",
+			mail	 		: mail,
+			password	 	: password
 		}
+
+		var params=data;
 
 		console.log("data",data);
 
 		return $http({
-			method : 'POST',
+			method : 'post',
 			url : urlWebService,
-			params : data
-		})
+			dataType: 'json',
+			data :  data,
+			params :  data
+		}).success(function(data, status, headers, config) {
+		    console.log("fj",data);
+		}).error(function(data, status, headers, config) {
+		    console.log("fjhk",data);
+		});
 
-*/
-		var data = {
-			'service' 		: 'user',
-			'method'	 	: 'authentification',
-			'mail'	 		: mail,
-			'password'	 	: password
+
+		/*var data = {
+			service 		: 'user',
+			method	 	: 'authentification',
+			mail	 		: mail,
+			password	 	: password
 		}
 		$http.post(urlWebService, data).
 		  success(function(data, status, headers, config) {
-		    // this callback will be called asynchronously
-		    // when the response is available
 		    console.log(data);
 		  }).
 		  error(function(data, status, headers, config) {
-		    // called asynchronously if an error occurs
-		    // or server returns response with an error status.
-		  });
+		    console.log(data);
+		  });*/
 
 
 	}
