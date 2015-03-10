@@ -6,11 +6,11 @@ application.service('SearchService', function($http){
 				'q' : search
 			}
 			return $http({
-			method : 'GET',
-			url : 'http://ajax.googleapis.com/ajax/services/search/web',
-			params : data
+				method : 'GET',
+				url : 'http://ajax.googleapis.com/ajax/services/search/web',
+				params : data
 
-		});
+			});
 	}
 
 	return ({

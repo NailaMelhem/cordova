@@ -1,4 +1,9 @@
 
+ urlWebService='http://localhost/Webservice/Public/index.php';
+
+
+
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -36,6 +41,10 @@ application.config(function($routeProvider){
         .when('/position', {
             templateUrl : 'partials/position.html',
             controller : 'PositionController'
+        })
+        .when('/login', {
+            templateUrl : 'partials/login.html',
+            controller : 'UserController'
         })
         .otherwise({
             redirectTo : '/home'
