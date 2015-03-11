@@ -1,43 +1,18 @@
 alors="";
 application.service('UserService', function($http){
-	function authentification(mail, password){
-
-
-		/*jsonData = {
-			'service' 		: 'user',
-			'method'	 	: 'authentification',
-			'mail'	 		: mail,
-			'password'	 	: password
-		}
-	   	$.ajax({
-	        type: 'POST',
-	        data: jsonData,
-	        url: urlWebService,
-	        dataType: 'json',
-	        async:true,
-	        success: function(data) {
-	        	console.log(data);
-	        	alors= data;
-	        }
-	    });
-	    return alors;
-
-		var data = {
-			'service' 		: 'user',
-			'method'	 	: 'authentification',
-			'mail'	 		: mail,
-			'password'	 	: password
-		}
-
-		console.log("data",data);
+	function connect(mail, password){
 
 		return $http({
 			method : 'POST',
 			url : urlWebService,
-			params : data
+			//data : $.param({service: 'user', method: 'authentification', mail: mail, password: password}),
+			//data: $.param({params: JSON.stringify({service: 'user', method: 'authentification', mail: mail, password: password})}),
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			data : $.param({service: 'user', method: 'authentification', mail: mail, password: password}),
+			cache : false
 		})
 
-*/
+/*
 		var data = {
 			'service' 		: 'user',
 			'method'	 	: 'authentification',
@@ -53,7 +28,7 @@ application.service('UserService', function($http){
 		  error(function(data, status, headers, config) {
 		    // called asynchronously if an error occurs
 		    // or server returns response with an error status.
-		  });
+		  }); */
 
 
 	}
@@ -61,7 +36,7 @@ application.service('UserService', function($http){
 
 
 	return ({
-		authentification : authentification
+		connect : connect
 	});
 
 
