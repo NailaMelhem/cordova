@@ -17,11 +17,17 @@ application.service('SearchService', function($http){
 
 
 
+		/*var data = {
+			'service' 		: "ViewRecette",
+			'method'	 	: "getAllViewRecettes",
+			'mail'	 		: "djflk",
+			'password'	 	: "fd"
+		}
 		var data = {
-			service 		: "user",
-			method	 	: "authentification",
-			mail	 		: "djflk",
-			password	 	: "fd"
+			'service': "ViewRecette",
+			'method': "getAllViewRecettes",
+			'mail': "djflk",
+			'password': "fd"
 		}
 
 		var params=data;
@@ -29,18 +35,20 @@ application.service('SearchService', function($http){
 		console.log("data",data);
 
 		return $http({
-			method : 'post',
+			method : 'POST',
 			url : urlWebService,
-			dataType: 'json',
-			/*data :  data,*/
-			params :  data
+			data :  data
+			params :  params,
+			async:false,
+			headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'}
+			
 		}).success(function(data, status, headers, config) {
-		    console.log("fj",data);
+		    console.log("success",data);
 		}).error(function(data, status, headers, config) {
-		    console.log("fjhk",data);
+		    console.log("error",data);
 		});
 
-
+*/
 
 
 

@@ -3,7 +3,7 @@ application.service('UserService', function($http){
 	function authentification(mail, password){
 
 
-		jsonData = {
+/*		jsonData = {
 			'service' 		: 'user',
 			'method'	 	: 'authentification',
 			'mail'	 		: "samt@gamil.com",//mail+"",
@@ -20,42 +20,44 @@ application.service('UserService', function($http){
 	        	alors= data;
 	        }
 	    });
-	    return alors;
+	    return alors;*/
 
-/*
+
 		var data = {
 			service 		: "user",
-			method	 	: "authentification",
+			method		 	: "authentification",
 			mail	 		: mail,
 			password	 	: password
 		}
 
 		var params=data;
 
-		console.log("data",data);
+		console.log("datass",data);
 
 		return $http({
 			method : 'post',
 			url : urlWebService,
 			dataType: 'json',
-			data :  data,
-			params :  data
+			data : $.param(data),
+			/*params :  data,*/
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		}).success(function(data, status, headers, config) {
-		    console.log("fj",data);
+		    console.log("succes",data);
 		}).error(function(data, status, headers, config) {
-		    console.log("fjhk",data);
+		    console.log("error",data);
 		});
 
 
-		/*var data = {
+		/*
+		var data = {
 			service 		: 'user',
-			method	 	: 'authentification',
+			method	 		: 'authentification',
 			mail	 		: mail,
 			password	 	: password
 		}
-		$http.post(urlWebService, data).
+		$http.post(urlWebService, {service: "ViewRecette", method: "getAllViewRecettes"} ).
 		  success(function(data, status, headers, config) {
-		    console.log(data);
+		    console.log("ici",data);
 		  }).
 		  error(function(data, status, headers, config) {
 		    console.log(data);
