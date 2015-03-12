@@ -15,7 +15,7 @@
     <!-- http://ajax.googleapis.com/ajax/services/search/web -->
     <body>
         <div class="app">
-            <header>E.T Maison Téléphone</header>
+            <header>Chef des fourneaux</header>
 
             <div class="wrapper" ng-view>
                 
@@ -23,9 +23,11 @@
             
             <nav>
                 <ul>
+                    <!-- c'est ce qui permet de mettre juste un mot pour définir ta page-->
                     <li><a href="#/home">Maison</a></li>
                     <li><a href="#/position">E.T</a></li>
                     <li><a href="#/login">Connexion</a></li>
+                    <li><a href="#/recettes">Recettes</a></li>
                 </ul>
                 
             </nav>
@@ -43,11 +45,13 @@
         <script type="text/javascript" src="js/Controllers/HomeController.js"></script>
         <script type="text/javascript" src="js/Controllers/PositionController.js"></script>
         <script type="text/javascript" src="js/Controllers/UserController.js"></script>
+        <script type="text/javascript" src="js/Controllers/RecettesController.js"></script>
 
         <!-- Service -->
         <script type="text/javascript" src="js/Services/SearchService.js"></script>
         <script type="text/javascript" src="js/Services/UserService.js"></script>
         <script type="text/javascript" src="js/Services/GeolocationService.js"></script>
+        <script type="text/javascript" src="js/Services/RecettesService.js"></script>
 
         <!-- Directive -->
         <script type="text/javascript" src="js/Directives/dirLoader.js"></script>

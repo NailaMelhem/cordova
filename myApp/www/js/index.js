@@ -42,7 +42,14 @@ application.config(function($routeProvider){
             templateUrl : 'partials/login.html',
             controller : 'UserController'
         })
+        .when('/recettes', {
+            templateUrl : 'partials/recettes.html',
+            controller : 'RecettesController'
+        })
         .otherwise({
             redirectTo : '/home'
         });
+
+        // Ici, on définit les différentes pages et on les associent 
+        // à leur controller
 });

@@ -1,4 +1,4 @@
-application.controller('HomeController', function ($scope, $sce, SearchService){
+ application.controller('HomeController', function ($scope, $sce, SearchService){
 
 	$scope.submit = function(){
 		

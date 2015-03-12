@@ -1,0 +1,51 @@
+<h1>Home</h1>
+
+<form  ng-submit="submit(); submitted=true">
+        <input type="submit" value="ok" />
+</form>
+<div dir-loader="recettes" class="page-content">
+<!-- Ici, on fait une boucle (équivalent du foreach) sur la variable recettes qu'on a cré
+dans le controller c'est comme foreach($recettes['response'] as $recette) -->
+        <div class="listItem" ng-repeat="recette in recettes" >
+               <!-- {{ en angular, c'est comme ça qu'on appelle les index à l'intérieur de resonse}} -->
+
+
+
+
+
+
+               <h4 ng-click="afficherRecette(recette.id_recette)">{{recette.titre}}</h4>
+
+
+
+
+
+               <h4>{{recette.img}}</h4>
+              <!-- showHtml, ça sert à formater en html car si on le fait pas, on aura les <p>
+              et ng-bind-html, c'est une commande angular et bind ca veut dire quoi? lieret  dans cette div il y a quoi? la recette
+				MLaai lsvalue de la recette
+				je sais mais je comprend pas pourquoi on utilise ngbindhtml
+				t'as oublié le show... tu veux que je teste avec le show mais sans le bindoui
+				le ici, cetait juste un repere lol
+				le showhtml n'agit pas
+				c'est pour ça qu'on utilise ng-bind	
+				ok j'ai compris
+
+               -->
+               <h4>ici{{showHtml(recette.value)}}</h4>
+               <div ng-bind-html="showHtml(recette.value)"></div>
+               <div dir-loader="fullRecette">
+	               <h4>{{recette.titre}}</h4>	
+					<div ng-bind-html="showHtml(recette.titre)" ></div>
+	               <div class="listItem" ng-repeat="ingredient in recettes.ingredients" >
+	               		{{ingredient.value}} {{ingredient.unite}} de {{ingredient.ingredients}} 
+               		</div>
+               		<div class="listItem" ng-repeat="produit in recettes.produits" >
+	               		{{produit.value_produit}}<br>
+	               		{{produit.prix}}  €<br>
+	               		ref: {{produit.ref}} 
+               		</div>
+               <hr />
+                
+        </div>
+</div>

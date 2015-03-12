@@ -1,12 +1,13 @@
-alors="";
-application.service('UserService', function($http){
-	function authentification(mail, password){
+
+application.service('RecettesService', function($http){
+
+	//appelle la vue des recettes
+	function getAllRecettes(){
 
 		var data = {
-			service 		: "user",
-			method		 	: "authentification",
-			mail	 		: mail,
-			password	 	: password
+			service 		: "viewrecette",
+			method		 	: "getallviewrecettes",
+
 		}
 
 		return $http({
@@ -16,15 +17,9 @@ application.service('UserService', function($http){
 			data : $.param(data),
 			async:false,
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-		}).success(function(data, status, headers, config) {
+		}).success(function(data) {
 			 console.log("valeur dans le success :",data);
 			 return "valeur qui vient du succes";
-			//return  (!data['error'])?data['response']:false;
-			/*if (!data['error']) {
-				data['response'];
-			} else{
-				false;
-			};*/
 
 
 		}).error(function(data, status, headers, config) {
@@ -35,12 +30,14 @@ application.service('UserService', function($http){
 
 
 
+
+
 	}
 
 
 
 	return ({
-		authentification : authentification
+		getAllRecettes : getAllRecettes
 	});
 
 
